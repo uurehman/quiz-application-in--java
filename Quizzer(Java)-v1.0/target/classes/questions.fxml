@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Instructor">
+   <children>
+      <Text fx:id="answerText" layoutX="25.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0"
+            text="Answer Type:"/>
+      <RadioButton fx:id="type" layoutX="30.0" layoutY="35.0" mnemonicParsing="false" text="MCQs">
+         <toggleGroup>
+            <ToggleGroup fx:id="answerType"/>
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="type" layoutX="30.0" layoutY="55.0" mnemonicParsing="false" prefHeight="18.0"
+                   prefWidth="89.0" text="True/False" toggleGroup="$answerType"/>
+      <RadioButton fx:id="type" layoutX="30.0" layoutY="75.0" mnemonicParsing="false" prefHeight="18.0"
+                   prefWidth="89.0" text="Numeric" toggleGroup="$answerType"/>
+      <Button layoutX="30.0" layoutY="100.0" mnemonicParsing="false" onAction="#onAddQuestion" text="Add Question"/>
+
+      <Text fx:id="questionHeading" layoutX="320.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0"
+            text="Question" textAlignment="CENTER" visible="false">
+         <font>
+            <Font size="24.0"/>
+         </font>
+      </Text>
+      <TextField fx:id="enterQuestion" layoutX="170.0" layoutY="70.0" prefHeight="50.0" prefWidth="400.0"
+                 visible="false"/>
+
+      <GridPane layoutX="160.0" layoutY="140.0" prefHeight="190.0" prefWidth="420.0"
+                style="-fx-background-color: #C3C3C3;">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+         </rowConstraints>
+         <children>
+            <VBox fx:id="expectedAnswer" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" visible="false"
+                  GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1"
+                  GridPane.valignment="CENTER">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Expected Answer"
+                        textAlignment="CENTER"/>
+                  <TextField fx:id="expectedAnswerInput" maxWidth="120.0"/>
+               </children>
+            </VBox>
+            <VBox fx:id="maximumScore" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" visible="false"
+                  GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Maximum Score"
+                        textAlignment="CENTER"/>
+                  <TextField fx:id="maximumScoreInput" maxHeight="50.0" maxWidth="60.0"/>
+               </children>
+            </VBox>
+            <VBox fx:id="options" prefHeight="200.0" prefWidth="100.0" spacing="10.0" visible="false">
+               <children>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Option (a)"/>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Option (b)"/>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Option (c)"/>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Option (d)"/>
+               </children>
+            </VBox>
+            <VBox fx:id="optionInput" prefHeight="200.0" prefWidth="100.0" visible="false" GridPane.columnIndex="1">
+               <children>
+                  <TextField fx:id="optionA">
+                     <VBox.margin>
+                        <Insets top="3.0"/>
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="optionB"/>
+                  <TextField fx:id="optionC"/>
+                  <TextField fx:id="optionD"/>
+               </children>
+            </VBox>
+            <Button fx:id="finish" alignment="CENTER" layoutX="300.0" layoutY="300.0" mnemonicParsing="false"
+                    onAction="#onQuestionFinish" text="Finish" textAlignment="CENTER" visible="false"
+                    GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1"
+                    GridPane.valignment="CENTER">
+            </Button>
+         </children>
+      </GridPane>
+      <ListView fx:id="questionList" layoutX="20.0" layoutY="140.0" prefHeight="240.0" prefWidth="120.0"/>
+
+      <Button fx:id="finishQuiz" layoutX="320.0" layoutY="350.0" mnemonicParsing="false" onAction="#onClickFinishQuiz"
+              text="Finish Quiz">
+         <font>
+            <Font name="System Bold" size="15.0"/>
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

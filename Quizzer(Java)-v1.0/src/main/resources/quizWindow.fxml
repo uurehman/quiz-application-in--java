@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+      prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="sample.student">
+   <children>
+      <Text layoutX="275.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question">
+         <font>
+            <Font size="24.0"/>
+         </font>
+      </Text>
+      <Text layoutX="38.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Question">
+         <font>
+            <Font size="18.0"/>
+         </font>
+      </Text>
+      <RadioButton layoutX="38.0" layoutY="125.0" mnemonicParsing="false" text="RadioButton">
+         <toggleGroup>
+            <ToggleGroup fx:id="questionOptions"/>
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton layoutX="38.0" layoutY="160.0" mnemonicParsing="false" text="RadioButton"
+                   toggleGroup="$questionOptions"/>
+      <RadioButton layoutX="38.0" layoutY="191.0" mnemonicParsing="false" text="RadioButton"
+                   toggleGroup="$questionOptions"/>
+      <RadioButton layoutX="38.0" layoutY="224.0" mnemonicParsing="false" text="RadioButton"
+                   toggleGroup="$questionOptions"/>
+      <TextField fx:id="numericOption" layoutX="38.0" layoutY="120.0" visible="false"/>
+      <Button layoutX="40.0" layoutY="329.0" mnemonicParsing="false" text="Next" textFill="#0a02b2">
+         <font>
+            <Font name="System Bold" size="15.0"/>
+         </font>
+      </Button>
+      <Button layoutX="500.0" layoutY="329.0" mnemonicParsing="false" text="Finish Quiz" textFill="#da0000">
+         <font>
+            <Font size="10.0"/>
+         </font>
+      </Button>
+   </children>
+</Pane>
