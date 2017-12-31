@@ -34,32 +34,48 @@ User can login entering the credentials. (credentials can be changed through the
 #### TEACHER
 
 Login
+
 ![Login](/images/teacherLogin.PNG)
 
 Login Success
+
 ![Login Success](/images/teacherLoginSuccess.PNG)
 
 Teacher Main View
 *After logging in as a teacher, user sees this screen*
+
 ![Teacher Main View](/images/teacherMainView.PNG)
 
 Create Quiz
+
 ![Create Quiz](/images/quizCreate.PNG)
 
 Add Question
+
 ![Add Question](/images/addQuestion.PNG)
 
+---------------------------------------------
 #### STUDENT
 
 Login
+
 ![Login](/images/studLoginSuccess.PNG)
 
 Login Success
+
 ![Login Success](/images/studLoginSuccess.PNG)
 
 Attempt Quiz
+
 ![Attempt Quiz](/images/quizAttempt.PNG)
+
+-----------------------------
+#### PROFILING
+Profiling
+
+![Profiling](/images/ProfilingData.PNG)
 
 -----------------------------------------------------
 ### Github Repository Link
 [quiz-application-in-java](https://github.com/uurehman/quiz-application-in-java)
+https://github.com/uurehman/quiz-application-in-java
